@@ -1,0 +1,18 @@
+[
+    {
+        "nome": "Bruno Beringhs",
+        "usuario": "bruno.beringhs@teste.com.br",
+        "senha": "1234567"
+    },
+    {
+        "nome": "Bruno Tester",
+        "usuario": "bruno.teste@teste.com",
+        "senha": "1234567"
+    },
+    {
+        "nome": "Roberto Carlos",
+        "usuario": "bruno.beringhs@teste.com.br",
+        "senha": "1234567",
+        "perfil": "admin"
+    }
+]
