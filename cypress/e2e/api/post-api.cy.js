@@ -10,7 +10,7 @@ describe('Funcionalidade: Fazer um post via API', () => {
         })
     });
 
-    it.only('Deve criar um post via API', () => {
+    it('Deve criar um post via API', () => {
         cy.request({
             method: 'POST',
             url: 'api/posts',
