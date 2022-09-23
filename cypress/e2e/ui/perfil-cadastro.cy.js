@@ -3,8 +3,7 @@
 describe('Funcionalidade: Criar Perfil do Conexão QA', () => {
 
   beforeEach(() => {
-    cy.login('bruno.teste@teste.com', '123456')
-    //cy.loginApp('bruno.teste@teste.com', '123456')   
+    cy.loginApp()   
     cy.visit('criar-perfil')
   });
 
@@ -30,6 +29,10 @@ describe('Funcionalidade: Criar Perfil do Conexão QA', () => {
     it('Validar mensagem de erro ao cadastrar informação incorreta', () => {
       cy.criarPerfil('QA Pleno', 'AmbevTech', 'www', 'Blumenau/SC', 'Análise e montagem de cenários de testes, preparação de ambientes, etc.', 'https://github.com/bberinghs', 'Ampla experiência adquirida atuando em empresas com grande reconhecimento de mercado.')
       cy.contains('Digite uma url válida').should('be.visible')
+    });
+
+    it.only('Deve visitar a tela sem abrir tela de login', () => {
+      cy.log('Visitou!!')
     });
 
   });
