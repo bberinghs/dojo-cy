@@ -59,7 +59,7 @@ Cypress.Commands.add('criarPost', (token, texto) => {
   })
 })
 
-Cypress.Commands.add('loginApp', (email, senha) => {
+Cypress.Commands.add('loginApp', () => {
   cy.request({
     method: 'POST',
     url: 'api/auth',
