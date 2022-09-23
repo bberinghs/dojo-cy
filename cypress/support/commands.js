@@ -70,6 +70,7 @@ Cypress.Commands.add('loginApp', (email, senha) => {
     }
   }).then((response) => {
     cy.setCookie('location' , 'BR-PR')
+    cy.setCookie('jwt' , response.body.jwt)
     window.localStorage.setItem('logadoCom', user[0].usuario)
     window.sessionStorage.setItem('jwt2', response.body.jwt)
   })
