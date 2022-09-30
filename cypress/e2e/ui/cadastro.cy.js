@@ -12,13 +12,13 @@ describe('Funcionalidade: Cadastro do Conexão QA', () => {
         let email = faker.internet.email(nome)
 
 
-        cy.get('[data-test="register-name"] > .MuiInputBase-root > .MuiInputBase-input')
+        cy.get('[data-test="register-name"]')
           .type(nome)
-        cy.get('[data-test="register-email"] > .MuiInputBase-root > .MuiInputBase-input')
+        cy.get('[data-test="register-email"]')
           .type(email)
-        cy.get('[data-test="register-password"] > .MuiInputBase-root > .MuiInputBase-input')
+        cy.get('[data-test="register-password"]')
           .type('1234567')
-        cy.get('[data-test="register-password2"] > .MuiInputBase-root > .MuiInputBase-input')
+        cy.get('[data-test="register-password2"]')
           .type('1234567')
         cy.get('[data-test="register-submit"]')
           .click()

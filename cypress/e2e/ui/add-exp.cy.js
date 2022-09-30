@@ -1,19 +1,24 @@
 /// <reference types="cypress" />
+import addExpPage from "../../support/pages/add-exp.page";
+import AddexpPage from "../../support/pages/add-exp.page";
+
+// const AddexpPage = require ('../../support/pages/add-exp.page')
 
 describe('Funcionalidade: Adicionar Experiência', () => {
 
     beforeEach(() => {
-      cy.loginApp()   
-      //cy.visit('criar-perfil')
-      cy.visit('adicionar-experiencia')
+      cy.loginApp()
+      addExpPage.visitar()       
     });
 
-    it('Adicionar Experiência com sucesso', () => {
-        cy.get('[data-test="experience-title"]').type('QA III')
-        cy.get('[data-test="experience-company"]').type('Ambev Tech LTDA')
-        cy.get('[data-test="experience-location"]').type('Blumenau/SC')
-        cy.get('#from').type('01/12/1989')
-        cy.get('#to')
-        cy.get('[rows="1"]')
+    it('Deve adicionar uma experiência com sucesso', () => {
+        AddexpPage.addExperiencia('QA Pleno' , 'Ambev Tech' , 'Blumenau' , '01/01/2022' , '01/01/2040', 'Empresa de TI' )
+        cy.get('[data-test="experience-delete"]').should('exist')
     });
+
+    it('Deve adicionar uma experiência Atual com sucesso', () => {
+      AddexpPage.addExperienciaAtual('QA Pleno III' , 'Ambev Tech' , 'Blumenau' , '01/01/2023' , 'Empresa de TI' )
+      cy.get('[data-test="experience-delete"]').should('exist')
+  });
+
 });

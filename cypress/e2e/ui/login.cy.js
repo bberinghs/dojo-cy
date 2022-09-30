@@ -12,9 +12,9 @@ describe('Funcionalidade: Login', () => {
     });
 
     it('Deve fazer login com sucesso', () => {
-        cy.get('[data-test="login-email"] > .MuiInputBase-root > .MuiInputBase-input')
+        cy.get('[data-test="login-email"]')
           .type('bruno.teste@teste.com')
-        cy.get('[data-test="login-password"] > .MuiInputBase-root > .MuiInputBase-input')
+        cy.get('[data-test="login-password"]')
           .type('123456')
         cy.get('[data-test="login-submit"]')
           .click()
@@ -23,9 +23,9 @@ describe('Funcionalidade: Login', () => {
     });
 
     it('Deve validar mensagem de erro ao fazer login com dados inválidos', () => {
-        cy.get('[data-test="login-email"] > .MuiInputBase-root > .MuiInputBase-input')
+        cy.get('[data-test="login-email"]')
           .type('bruno.teste1234@teste.com')
-        cy.get('[data-test="login-password"] > .MuiInputBase-root > .MuiInputBase-input')
+        cy.get('[data-test="login-password"]')
           .type('123456')
         cy.get('[data-test="login-submit"]')
           .click()
